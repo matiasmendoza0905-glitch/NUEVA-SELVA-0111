@@ -1,0 +1,562 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análisis de Imagen Pública - Esencia Selvática</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+:root {
+  --verde: #0F5A29;
+  --lima: #62A233;
+  --amarillo: #F3BA22;
+  --marron: #5C2513;
+  --fondo: #f4f7f1;
+  --blanco: #ffffff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--fondo);
+  color: #263329;
+  line-height: 1.65;
+}
+header {
+  background: var(--verde);
+  color: white;
+  padding: 55px 20px;
+  text-align: center;
+  border-bottom: 8px solid var(--amarillo);
+}
+header h1 { font-size: 38px; margin: 15px 0; }
+header h2 { color: #d4f4a4; }
+header p { margin: 8px; }
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 25px;
+}
+section {
+  background: white;
+  padding: 28px;
+  margin: 25px 0;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px #0000000d;
+}
+h2 {
+  color: var(--verde);
+  border-left: 6px solid var(--lima);
+  padding-left: 12px;
+}
+h3 { color: var(--marron); }
+.portada-datos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  max-width: 650px;
+  margin: 30px auto 0;
+  text-align: left;
+}
+.portada-datos div {
+  background: #ffffff18;
+  padding: 15px;
+  border-radius: 8px;
+}
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 25px 0;
+}
+.kpi {
+  background: var(--verde);
+  color: white;
+  text-align: center;
+  padding: 25px;
+  border-radius: 12px;
+}
+.kpi strong {
+  display: block;
+  color: var(--amarillo);
+  font-size: 35px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 15px 0;
+}
+th {
+  background: var(--verde);
+  color: white;
+}
+td, th {
+  border: 1px solid #ddd;
+  padding: 11px;
+  text-align: left;
+}
+tr:nth-child(even) { background: #f0f6ec; }
+.grafico {
+  width: 100%;
+  max-width: 650px;
+  height: 350px;
+  margin: 25px auto;
+  position: relative;
+}
+.grafico canvas {
+  max-width: 100%;
+  max-height: 100%;
+}
+.nota {
+  background: #fff6d9;
+  border-left: 5px solid var(--amarillo);
+  padding: 15px;
+  border-radius: 6px;
+}
+.foda {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.foda div {
+  padding: 20px;
+  border-radius: 10px;
+  background: #eff7e9;
+  border-top: 5px solid var(--lima);
+}
+.foda div:nth-child(2), .foda div:nth-child(3) {
+  background: #fff7e3;
+  border-color: var(--amarillo);
+}
+.lista li { margin-bottom: 9px; }
+footer {
+  background: var(--verde);
+  color: white;
+  text-align: center;
+  padding: 25px;
+  margin-top: 40px;
+}
+@media(max-width:700px) {
+  .kpis, .foda, .portada-datos {
+    grid-template-columns: 1fr;
+  }
+  header h1 { font-size: 28px; }
+  section { padding: 18px; }
+  table { font-size: 13px; }
+}
+@media print {
+  body { background: white; }
+  section { box-shadow: none; break-inside: avoid; }
+  .grafico { break-inside: avoid; }
+  header { print-color-adjust: exact; }
+  .kpi, th, footer {
+    print-color-adjust: exact;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <p>SENATI / DISEÑO Y COMUNICACIÓN</p>
+  <h1>ANÁLISIS DE<br>IMAGEN PÚBLICA</h1>
+  <h2>ESENCIA SELVÁTICA</h2>
+  <p>Informe estratégico de posicionamiento y preferencias del público</p>
+  <p>Resultados de una encuesta en línea: 10 respuestas válidas</p>
+  <p>Aplicación: 5 de noviembre de 2026</p>
+
+  <div class="portada-datos">
+    <div><strong>AUTORA</strong><br>Jocelyn Rosmery Limaylla Egoavil</div>
+    <div><strong>DOCENTE</strong><br>Dra. María Elena Rostagno</div>
+    <div><strong>INSTITUCIÓN</strong><br>SENATI</div>
+    <div><strong>ÁREA</strong><br>Diseño y Comunicación</div>
+  </div>
+</header>
+
+<main class="container">
+
+<section>
+<h2>RESUMEN EJECUTIVO</h2>
+<p>
+El presente informe examina la propuesta de imagen pública de
+Esencia Selvática, marca de esencias y saborizantes inspirados
+en frutas de la selva peruana.
+</p>
+<p>
+Los resultados revelan interés en jugos y refrescos (60%),
+preferencia por el aguaje (40%) y una oportunidad de difusión
+por TikTok (50%).
+</p>
+
+<div class="kpis">
+<div class="kpi"><strong>60%</strong>Jugos y refrescos</div>
+<div class="kpi"><strong>40%</strong>Preferencia por aguaje</div>
+<div class="kpi"><strong>50%</strong>TikTok</div>
+</div>
+
+<div class="nota">
+<strong>Nota metodológica:</strong> La captura del formulario
+muestra el nombre Satipo Fruits, mientras que la hoja de
+respuestas se titula Esencia Selvática. La pregunta de
+reconocimiento de marca no se atribuye concluyentemente
+a Esencia Selvática.
+</div>
+</section>
+
+<section>
+<h2>CONTENIDO</h2>
+<ol class="lista">
+<li>Introducción</li>
+<li>Objetivos del estudio</li>
+<li>Marco teórico</li>
+<li>Metodología de investigación</li>
+<li>Análisis de imagen pública y resultados</li>
+<li>Matriz FODA estratégica</li>
+<li>Propuesta estratégica y plan de acción</li>
+<li>Conclusiones y recomendaciones</li>
+<li>Referencias bibliográficas</li>
+<li>Anexo: Matriz de respuestas</li>
+</ol>
+</section>
+
+<section>
+<h2>1. INTRODUCCIÓN</h2>
+<p>
+La imagen pública es la percepción que se forma sobre una
+organización a partir de sus mensajes, elementos visuales y
+experiencias de contacto. Para una marca vinculada a
+ingredientes y sabores amazónicos, la coherencia entre su
+identidad, sus productos y su comunicación resulta especialmente
+relevante.
+</p>
+<p>
+Esencia Selvática se plantea como una propuesta de esencias
+y saborizantes para alimentos y bebidas, inspirada en frutas
+como aguaje, cocona, guanábana, maracuyá, camu camu y copoazú.
+</p>
+</section>
+
+<section>
+<h2>2. OBJETIVOS DEL ESTUDIO</h2>
+<h3>2.1. Objetivo general</h3>
+<p>
+Analizar la imagen pública propuesta para Esencia Selvática
+y las preferencias de consumidores encuestados, con el propósito
+de identificar fortalezas, áreas de mejora y estrategias de
+posicionamiento.
+</p>
+<h3>2.2. Objetivos específicos</h3>
+<ul class="lista">
+<li>Evaluar la identidad visual, verbal y cultural.</li>
+<li>Identificar hábitos de consumo y preferencias de frutas.</li>
+<li>Determinar la disposición a probar esencias.</li>
+<li>Identificar atributos valorados y canales preferidos.</li>
+<li>Formular una matriz FODA y un plan de acción.</li>
+</ul>
+</section>
+
+<section>
+<h2>3. MARCO TEÓRICO</h2>
+<table>
+<tr><th>Concepto</th><th>Referencia</th><th>Aplicación</th></tr>
+<tr><td>Imagen pública</td><td>Costa (2004)</td><td>Percepción que la marca busca generar.</td></tr>
+<tr><td>Identidad corporativa</td><td>Capriotti (2009)</td><td>Valores y rasgos que distinguen la marca.</td></tr>
+<tr><td>Posicionamiento</td><td>Kotler y Keller (2016)</td><td>Atributos diferenciadores.</td></tr>
+<tr><td>Comunicación digital</td><td>Kaplan y Haenlein (2010)</td><td>Canales de difusión y comunicación.</td></tr>
+</table>
+</section>
+
+<section>
+<h2>4. METODOLOGÍA DE LA INVESTIGACIÓN</h2>
+<table>
+<tr><th>Elemento</th><th>Detalle</th></tr>
+<tr><td>Diseño</td><td>Descriptivo, exploratorio y transversal.</td></tr>
+<tr><td>Instrumento</td><td>Cuestionario en línea de 7 preguntas.</td></tr>
+<tr><td>Muestra</td><td>10 respuestas visibles.</td></tr>
+<tr><td>Fecha</td><td>5 de noviembre de 2026.</td></tr>
+<tr><td>Tratamiento</td><td>Frecuencia y porcentaje.</td></tr>
+<tr><td>Alcance</td><td>Preferencias e interés declarado.</td></tr>
+</table>
+
+<h3>4.1. Alcances y limitaciones</h3>
+<ul>
+<li>La muestra es pequeña y no representativa de toda la población.</li>
+<li>Las respuestas no demuestran compra ni satisfacción efectiva.</li>
+<li>Existe una discrepancia en el nombre de la marca consultada.</li>
+<li>No se aportaron métricas verificadas de redes sociales.</li>
+</ul>
+</section>
+
+<section>
+<h2>5. ANÁLISIS DE IMAGEN PÚBLICA Y RESULTADOS</h2>
+<h3>5.1. Identidad visual y corporativa</h3>
+<p>
+La propuesta de Esencia Selvática busca representar la riqueza
+natural y frutal de la selva peruana mediante una identidad
+visual inspirada en la naturaleza, la frescura y la autenticidad.
+</p>
+<table>
+<tr><th>Color</th><th>Código</th><th>Significado</th></tr>
+<tr><td>Verde selva</td><td>#0F5A29</td><td>Naturaleza y origen amazónico.</td></tr>
+<tr><td>Verde lima</td><td>#62A233</td><td>Frescura y vitalidad.</td></tr>
+<tr><td>Amarillo frutal</td><td>#F3BA22</td><td>Energía y cercanía.</td></tr>
+<tr><td>Marrón tierra</td><td>#5C2513</td><td>Origen y tradición.</td></tr>
+</table>
+
+<h3>5.2. Percepción y preferencias del público encuestado</h3>
+<p>Los siguientes gráficos representan las siete preguntas de la encuesta.</p>
+
+<div id="resultados"></div>
+</section>
+
+<section>
+<h2>5.3. REPUTACIÓN DIGITAL POR PLATAFORMA</h2>
+<table>
+<tr><th>Plataforma</th><th>Información disponible</th><th>Próximo paso</th></tr>
+<tr><td>TikTok</td><td>Preferida por el 50%.</td><td>Revisar vistas, alcance y comentarios.</td></tr>
+<tr><td>WhatsApp</td><td>Preferido por el 30%.</td><td>Medir consultas y tiempos de respuesta.</td></tr>
+<tr><td>Facebook</td><td>Preferido por el 10%.</td><td>Registrar interacciones.</td></tr>
+<tr><td>Otras plataformas</td><td>Sin evidencia de reseñas.</td><td>Recopilar información oficial.</td></tr>
+</table>
+</section>
+
+<section>
+<h2>5.4. BRECHA Y OPORTUNIDADES EN COMUNICACIÓN DIGITAL</h2>
+<p>
+La oportunidad más clara consiste en priorizar videos
+demostrativos para TikTok y disponer de un canal de consultas
+por WhatsApp. Para evaluar el desempeño se propone medir el
+tiempo de respuesta, el alcance de publicaciones y la tasa
+de consultas durante el primer mes.
+</p>
+</section>
+
+<section>
+<h2>6. MATRIZ FODA ESTRATÉGICA</h2>
+<div class="foda">
+<div>
+<h3>FORTALEZAS</h3>
+<ul>
+<li>Inspiración en frutas de la selva peruana.</li>
+<li>Variedad de sabores y aplicaciones.</li>
+<li>Identidad visual y paleta cromática definidas.</li>
+</ul>
+</div>
+<div>
+<h3>OPORTUNIDADES</h3>
+<ul>
+<li>Preferencia por jugos y refrescos (60%).</li>
+<li>Interés potencial de prueba (100% respondió Sí o Tal vez).</li>
+<li>TikTok y WhatsApp concentran el 80% de preferencias.</li>
+</ul>
+</div>
+<div>
+<h3>DEBILIDADES</h3>
+<ul>
+<li>Falta de evidencia de desempeño digital y ventas.</li>
+<li>Inconsistencia en el nombre de la marca.</li>
+<li>Necesidad de ampliar la muestra.</li>
+</ul>
+</div>
+<div>
+<h3>AMENAZAS</h3>
+<ul>
+<li>Competencia de saborizantes establecidos.</li>
+<li>Interés incierto: 80% respondió Tal vez.</li>
+<li>Cambios en gustos y canales saturados.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<h2>7. PROPUESTA ESTRATÉGICA Y PLAN DE ACCIÓN</h2>
+<p>Metas propuestas para un periodo de tres meses.</p>
+<table>
+<tr><th>Estrategia</th><th>Acción</th><th>Plazo</th><th>Indicador</th></tr>
+<tr><td>Identidad consistente</td><td>Manual de logotipo, colores y etiquetas.</td><td>Mes 1</td><td>100% de nuevas piezas revisadas.</td></tr>
+<tr><td>Producto demostrativo</td><td>Crear videos de recetas.</td><td>Meses 1–3</td><td>6 videos piloto.</td></tr>
+<tr><td>Frutas priorizadas</td><td>Pruebas de aguaje y guanábana.</td><td>Meses 1–2</td><td>2 pruebas de concepto.</td></tr>
+<tr><td>Comunicación digital</td><td>Publicar en TikTok y atender WhatsApp.</td><td>Meses 1–3</td><td>Publicaciones y tiempos de respuesta.</td></tr>
+<tr><td>Medición de marca</td><td>Corregir y repetir encuesta.</td><td>Mes 2</td><td>30 respuestas nuevas.</td></tr>
+<tr><td>Experiencia del producto</td><td>Encuesta después de probar muestras.</td><td>Mes 3</td><td>Satisfacción sobre 5 puntos.</td></tr>
+</table>
+</section>
+
+<section>
+<h2>8. CONCLUSIONES Y RECOMENDACIONES</h2>
+<h3>8.1. Conclusiones</h3>
+<ul class="lista">
+<li>Los jugos y refrescos representan la preferencia más frecuente (60%).</li>
+<li>El aguaje (40%) y la guanábana (30%) destacan entre las frutas elegidas.</li>
+<li>El 80% respondió Tal vez respecto a probar esencias.</li>
+<li>El sabor es el factor de compra más citado (50%).</li>
+<li>TikTok (50%) y WhatsApp (30%) son los canales preferidos.</li>
+<li>La discrepancia de nombres limita las conclusiones sobre reconocimiento de marca.</li>
+</ul>
+
+<h3>8.2. Recomendaciones</h3>
+<ul class="lista">
+<li>Unificar el nombre de la marca en todos los instrumentos.</li>
+<li>Publicar videos sobre usos en jugos y refrescos.</li>
+<li>Realizar degustaciones y demostraciones.</li>
+<li>Medir satisfacción después de probar el producto.</li>
+<li>Ampliar la muestra de encuestados.</li>
+<li>Evaluar mensualmente las métricas digitales.</li>
+</ul>
+<div class="nota">
+<strong>Recomendación prioritaria:</strong>
+Validar la aceptación real de dos productos de prueba y corregir
+la identidad nominal de la encuesta antes de invertir en una campaña.
+</div>
+</section>
+
+<section>
+<h2>9. REFERENCIAS BIBLIOGRÁFICAS</h2>
+<ul>
+<li>Capriotti, P. (2009). <i>Branding corporativo: Fundamentos para la gestión estratégica de la identidad corporativa.</i></li>
+<li>Costa, J. (2004). <i>La imagen de marca: Un fenómeno social.</i> Paidós.</li>
+<li>Kaplan, A. M., & Haenlein, M. (2010). Users of the world, unite! <i>Business Horizons, 53</i>(1), 59–68.</li>
+<li>Kotler, P., & Keller, K. L. (2016). <i>Marketing Management</i> (15th ed.). Pearson.</li>
+</ul>
+<p><strong>Fuente primaria:</strong> Encuesta de Preferencias de Satipo Fruits y Esencia Selvática, 5 de noviembre de 2026.</p>
+<p><strong>Fuente institucional:</strong> Documento base de análisis de imagen pública de Esencia Selvática.</p>
+</section>
+
+<section>
+<h2>ANEXO. MATRIZ DE RESPUESTAS REGISTRADAS</h2>
+<table>
+<tr><th>N.º</th><th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th>Q5</th><th>Q6</th><th>Q7</th></tr>
+<tr><td>1</td><td>P</td><td>Cocona</td><td>No</td><td>Sí</td><td>P</td><td>Sabor</td><td>WhatsApp</td></tr>
+<tr><td>2</td><td>P</td><td>Aguaje</td><td>Tal vez</td><td>Tal vez</td><td>J&R</td><td>Precio</td><td>TikTok</td></tr>
+<tr><td>3</td><td>J&R</td><td>Guanábana</td><td>Sí</td><td>Tal vez</td><td>H</td><td>Sabor</td><td>WhatsApp</td></tr>
+<tr><td>4</td><td>J&R</td><td>Aguaje</td><td>No</td><td>Tal vez</td><td>P</td><td>Sabor</td><td>WhatsApp</td></tr>
+<tr><td>5</td><td>J&R</td><td>Aguaje</td><td>No</td><td>Sí</td><td>J&R</td><td>Calidad</td><td>Facebook</td></tr>
+<tr><td>6</td><td>J&R</td><td>Cocona</td><td>Tal vez</td><td>Tal vez</td><td>NV</td><td>Precio</td><td>PT</td></tr>
+<tr><td>7</td><td>H</td><td>Guanábana</td><td>Sí</td><td>Tal vez</td><td>J&R</td><td>Sabor</td><td>TikTok</td></tr>
+<tr><td>8</td><td>J&R</td><td>Guanábana</td><td>Sí</td><td>Tal vez</td><td>J&R</td><td>Calidad</td><td>TikTok</td></tr>
+<tr><td>9</td><td>P</td><td>Maracuyá</td><td>No</td><td>Tal vez</td><td>H</td><td>Sabor</td><td>TikTok</td></tr>
+<tr><td>10</td><td>J&R</td><td>Aguaje</td><td>No</td><td>Tal vez</td><td>P</td><td>Aroma</td><td>TikTok</td></tr>
+</table>
+<p><small>J&R = jugos y refrescos; P = postres; H = helados; NV = no los utilizaría; PT = publicidad en tiendas.</small></p>
+</section>
+
+</main>
+
+<footer>
+<strong>ESENCIA SELVÁTICA</strong>
+<p>Gotas de sabor amazónico</p>
+<p>SENATI – Diseño y Comunicación | 2026</p>
+</footer>
+
+<script>
+const encuestas = [
+{
+titulo:"5.2.1. ¿Qué productos consume con mayor frecuencia?",
+nombre:"Productos consumidos con mayor frecuencia",
+labels:["Jugos y refrescos","Postres","Helados"],
+datos:[6,3,1],
+interpretacion:"El 60% elige jugos y refrescos, el 30% postres y el 10% helados. Se recomienda priorizar ejemplos de uso en bebidas."
+},
+{
+titulo:"5.2.2. ¿Qué fruta de la selva es de su mayor preferencia?",
+nombre:"Fruta amazónica de mayor preferencia",
+labels:["Aguaje","Guanábana","Cocona","Maracuyá"],
+datos:[4,3,2,1],
+interpretacion:"El aguaje alcanza el 40%, seguido de guanábana (30%), cocona (20%) y maracuyá (10%)."
+},
+{
+titulo:"5.2.3. ¿Ha escuchado hablar de la marca consultada?",
+nombre:"Conocimiento previo de la marca consultada",
+labels:["No","Sí","Tal vez"],
+datos:[5,3,2],
+interpretacion:"El 50% responde No, el 30% Sí y el 20% Tal vez. Estos datos corresponden a la marca consultada en el formulario, no necesariamente a Esencia Selvática."
+},
+{
+titulo:"5.2.4. ¿Le gustaría probar esencias o saborizantes inspirados en frutas de Satipo?",
+nombre:"Disposición a probar esencias amazónicas",
+labels:["Tal vez","Sí"],
+datos:[8,2],
+interpretacion:"El 80% responde Tal vez y el 20% Sí. Existe interés potencial, pero se requieren demostraciones."
+},
+{
+titulo:"5.2.5. ¿Para qué utilizaría estos productos?",
+nombre:"Usos posibles de las esencias",
+labels:["Jugos y refrescos","Postres","Helados","No los utilizaría"],
+datos:[4,3,2,1],
+interpretacion:"El 40% usaría las esencias en jugos y refrescos, el 30% en postres y el 20% en helados."
+},
+{
+titulo:"5.2.6. ¿Qué considera más importante al comprar estos productos?",
+nombre:"Factor más importante al comprar",
+labels:["Sabor","Precio","Calidad","Aroma"],
+datos:[5,2,2,1],
+interpretacion:"El sabor obtiene el 50%, seguido de precio y calidad con 20% cada uno y aroma con 10%."
+},
+{
+titulo:"5.2.7. ¿Por qué medio le gustaría recibir información?",
+nombre:"Canal preferido para recibir información",
+labels:["TikTok","WhatsApp","Facebook","Publicidad en tiendas"],
+datos:[5,3,1,1],
+interpretacion:"TikTok concentra el 50% de las preferencias y WhatsApp el 30%. Se recomienda utilizar ambos canales."
+}
+];
+
+const contenedor = document.getElementById("resultados");
+
+encuestas.forEach((e,i)=>{
+ const article=document.createElement("article");
+ article.innerHTML=`
+ <h3>${e.titulo}</h3>
+ <div class="grafico">
+   <canvas id="grafico${i}" aria-label="${e.nombre}"></canvas>
+ </div>
+ <table>
+ <tr><th>Respuesta</th><th>Frecuencia</th><th>Porcentaje</th></tr>
+ ${e.labels.map((l,j)=>`
+ <tr>
+ <td>${l}</td>
+ <td>${e.datos[j]}</td>
+ <td>${e.datos[j]*10}%</td>
+ </tr>`).join("")}
+ </table>
+ <p><strong>Figura ${i+1}:</strong> ${e.nombre}. Fuente: Elaboración propia a partir de 10 respuestas de encuesta (05/11/2026).</p>
+ <p><strong>Interpretación:</strong> ${e.interpretacion}</p>
+ <hr>
+ `;
+ contenedor.appendChild(article);
+
+ new Chart(document.getElementById("grafico"+i),{
+   type:"doughnut",
+   data:{
+     labels:e.labels,
+     datasets:[{
+       data:e.datos,
+       backgroundColor:["#0F5A29","#62A233","#F3BA22","#5C2513"],
+       borderColor:"#ffffff",
+       borderWidth:3
+     }]
+   },
+   options:{
+     responsive:true,
+     maintainAspectRatio:false,
+     plugins:{
+       legend:{position:"bottom"},
+       tooltip:{
+         callbacks:{
+           label:function(context){
+             return context.label+": "+context.raw+
+               " respuestas ("+(context.raw*10)+"%)";
+           }
+         }
+       }
+     }
+   }
+ });
+});
+</script>
+
+</body>
+</html>
